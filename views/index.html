@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/script.js" charset="utf-8"></script>
+    <title>Angular/Mongo Code Challenge</title>
+  </head>
+  <body>
+    <h1>Angular/Mongo Code Challenge</h1>
+    <div class="" ng-controller="heroController">
+      <input type="text" ng-model="aliasIn" value="" placeholder="alias">
+      <input type="text" ng-model="firstIn" value="" placeholder="first name">
+      <input type="text" ng-model="lastIn" value="" placeholder="last name">
+      <input type="text" ng-model="cityIn" value="" placeholder="city">
+      <select class="" ng-model="powerIn" value="powers">
+        <option value="invisisbility">Invisibility</option>
+        <option value="flight">Flight</option>
+        <option value="super speed">Super Speed</option>
+        <option value="heat vision">Heat Vision</option>
+        <option value="super strength">Super Strength</option>
+        <option value="accelerated healing">Accelerated Healing</option>
+        <option value="power blast">Power Blast</option>
+        <option value="animal affinity">Animal Affinity</option>
+      </select>
+      <button type="button" name="button" ng-click="addHero()">submit</button>
+
+      <table>
+  <thead>
+   <tr>
+     <th>Alias</th>
+     <th>Name</th>
+     <th>City</th>
+     <th>Power</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr ng-repeat="record in allTheRecords">
+     <td>{{ record.alias }}</td>
+     <td>{{ record.first_name }} {{ record.last_name }}</td>
+     <td>{{ record.city }}</td>
+     <td>{{ record.power_name }}<button id='delete' type="button" ng-click='deleteHero($index)'>Delete</button></td>
+   </tr>
+ </tbody>
+</table>
+    </div>
+
+
+  </body>
+</html>
